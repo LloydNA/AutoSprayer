@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.Discouraged;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -23,6 +24,8 @@ public class HomeFragment extends Fragment {
 
         obBinding = FragmentHomeBinding.inflate(inflater, container, false);
 
+        TestingUtils.replaceView(obBinding.horseShoeHumidityIndicator.getRootView(), new HorseShoeView(this.getContext()));
+
         return obBinding.getRoot();
     }
 
@@ -31,4 +34,8 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         obBinding = null;
     }
+
+
+
 }
+
