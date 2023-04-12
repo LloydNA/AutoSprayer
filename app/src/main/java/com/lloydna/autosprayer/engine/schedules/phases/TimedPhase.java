@@ -1,8 +1,6 @@
-package com.lloydna.autosprayer.schedules.phases;
+package com.lloydna.autosprayer.engine.schedules.phases;
 
-import com.lloydna.autosprayer.schedules.phase_activation_conditions.ConditionedPhaseActivationCondition;
-import com.lloydna.autosprayer.schedules.phase_activation_conditions.PhaseActivationCondition;
-import com.lloydna.autosprayer.schedules.phase_activation_conditions.TimedPhaseActivationCondition;
+import com.lloydna.autosprayer.engine.schedules.phase_activation_conditions.TimedPhaseActivationCondition;
 
 public class TimedPhase extends Phase{
     public TimedPhase(float minTargetHumidity,float maxTargetHumidity, int activationHour24Format, int deactivationHour24Format){
@@ -13,12 +11,17 @@ public class TimedPhase extends Phase{
     }
 
     @Override
-    public void enablePhaseIfNeeded() {
+    public void enablePhaseIfNeeded() { //singleton pending
         //TODO
     }
 
     @Override
     public boolean checkForValidPhaseDecorator(PhaseKind candidatePhaseKind) {
         return true;
+    }
+
+    @Override
+    public boolean checkForValidPhaseDecorator() {
+        return schedule.checkForValidPhaseDecorator(PhaseKind.TIMED_PHASE);
     }
 }

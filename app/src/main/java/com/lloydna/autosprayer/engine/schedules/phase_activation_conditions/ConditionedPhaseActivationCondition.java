@@ -1,4 +1,4 @@
-package com.lloydna.autosprayer.schedules.phase_activation_conditions;
+package com.lloydna.autosprayer.engine.schedules.phase_activation_conditions;
 
 public class ConditionedPhaseActivationCondition extends PhaseActivationCondition{
     public ConditionedPhaseActivationCondition(float minTargetHumidity,float maxTargetHumidity){

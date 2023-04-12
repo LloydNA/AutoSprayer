@@ -1,4 +1,4 @@
-package com.lloydna.autosprayer.schedules.phase_activation_conditions;
+package com.lloydna.autosprayer.engine.schedules.phase_activation_conditions;
 
 import android.util.Pair;
 

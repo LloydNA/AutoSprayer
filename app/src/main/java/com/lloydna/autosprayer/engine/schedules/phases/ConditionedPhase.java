@@ -1,7 +1,6 @@
-package com.lloydna.autosprayer.schedules.phases;
+package com.lloydna.autosprayer.engine.schedules.phases;
 
-import com.lloydna.autosprayer.schedules.phase_activation_conditions.ConditionedPhaseActivationCondition;
-import com.lloydna.autosprayer.schedules.phase_activation_conditions.PhaseActivationCondition;
+import com.lloydna.autosprayer.engine.schedules.phase_activation_conditions.ConditionedPhaseActivationCondition;
 
 public class ConditionedPhase extends Phase{
 
@@ -19,6 +18,11 @@ public class ConditionedPhase extends Phase{
 
     @Override
     public boolean checkForValidPhaseDecorator(PhaseKind candidatePhaseKind) {
-        return true;
+        return schedule.checkForValidPhaseDecorator();
+    }
+
+    @Override
+    public boolean checkForValidPhaseDecorator() {
+        return schedule.checkForValidPhaseDecorator(PhaseKind.CONDITIONED_PHASE);
     }
 }

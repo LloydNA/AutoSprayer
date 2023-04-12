@@ -1,22 +1,21 @@
-package com.lloydna.autosprayer.schedules;
+package com.lloydna.autosprayer.engine.schedules;
 
-import com.lloydna.autosprayer.schedules.phases.PhaseKind;
+import com.lloydna.autosprayer.engine.schedules.phases.PhaseKind;
 
 public class TimedSchedule extends Schedule{
     public TimedSchedule(String name){
         this.name = name;
         allowedPhases = PhaseKind.TIMED_PHASE;
-        schedule = null;
     }
 
     public TimedSchedule(){
         this.name = "A timed schedule";
         allowedPhases = PhaseKind.TIMED_PHASE;
-        schedule = null;
     }
 
     @Override
     public boolean checkForValidPhaseDecorator(PhaseKind candidatePhaseKind){
         return candidatePhaseKind == allowedPhases;
     }
+
 }
