@@ -24,9 +24,11 @@ public class HomeFragment extends Fragment {
 
         obBinding = FragmentHomeBinding.inflate(inflater, container, false);
 
-        TestingUtils.replaceView(obBinding.horseShoeHumidityIndicator.getRootView(), new HorseShoeView(this.getContext()));
+        View testHorseShoeView = new HorseShoeView(getActivity());
+        testHorseShoeView.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        return obBinding.getRoot();
+        return testHorseShoeView;
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.lloydna.autosprayer.engine.apis;
 import androidx.annotation.Discouraged;
 
 import com.lloydna.autosprayer.engine.schedules.Schedule;
+import com.lloydna.autosprayer.engine.sprayer_bridge.readers.SchedulesReader;
 
 import java.util.List;
 
@@ -33,6 +34,8 @@ public class SchedulesApi extends Api{ //observable schedule?
 
     @Discouraged(message = "For testing purposes")
     public List<Schedule> getSchedules(){
+        ((SchedulesReader)SchedulesReader.getSchedulesReader()).sendTestSchedules();
+
         return subscribers;
     }
 

@@ -24,12 +24,6 @@ public class SprayerReader extends Reader{
 
     @Override
     public void sendDataToApp() {
-        List<Schedule> schedules = new ArrayList<>();
 
-        schedules.add(new UniversalSchedule("Winter"));
-        schedules.add(new UniversalSchedule("Summer"));
-        schedules.add(new UniversalSchedule("Spring"));
-
-        SchedulesApi.getSchedulesApi().updateAppData(schedules);
     }
 }
